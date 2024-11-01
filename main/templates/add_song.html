@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        
+        <div class="container">
+            <h2>Add song</h2>
+            
+            <form class="add-song-form" method="post" enctype="multipart/form-data" action="{% url 'add_song' %}">
+                {% csrf_token %}
+                <label for="title">Enter the title:</label>
+                <input type="text" name="title" required>
+                <label for="artist">Enter the artist:</label>
+                <input type="text" name="artist" required>
+                <label for="image">Enter the image:</label>
+                <input type="file" accept="image/png, image/jpg, image/jpeg, image/webp" name="image" required>
+                <label for="audio_file">Enter the audio file:</label>
+                <input type="file" accept="audio/mp3,audio/wav" name="audio_file" required>
+                <input id="add-song-btn" type="submit" value="Upload">
+            </form>
+        </div>
+    
+        
+    </body>
+</html>

@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "music-player"
+version = "0.1.0"
+description = ""
+authors = ["Hasper15 <ainur.vahitov2002@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.2"
+psycopg2 = "^2.9.10"
+pillow = "^11.0.0"
+djangorestframework = "^3.15.2"
+syncedlyrics = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Custom Music Player</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    
+  </head>
+  <body>
+    <div class="music-player">
+      <button id="playlist">
+        <i class="fa-solid fa-bars fa-xl"></i>
+      </button>
+      <img id="song-image" src="#" />
+      <div class="song-details">
+        <p id="song-name">Make Me Move</p>
+        <p id="song-artist">Culture Code</p>
+      </div>
+      <div class="player-options">
+        <button id="shuffle">
+          <i class="fa-solid fa-shuffle"></i>
+        </button>
+        <button id="prev">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+        <button id="play">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <button id="pause" class="hide">
+          <i class="fa-solid fa-pause"></i>
+        </button>
+        <button id="next">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+        <button id="repeat">
+          <i class="fa-solid fa-repeat"></i>
+        </button>
+      </div>
+      <audio id="audio" preload="auto"></audio>
+      <div id="progress-bar">
+        <div id="current-progress"></div>
+      </div>
+      <div class="time-container">
+        <span id="current-time">0:00</span>
+        <span id="max-duration">0:00</span>
+      </div>
+      <div id="playlist-container" class="hide">
+        <div style="height: 90%;">
+          <button id="close-button">
+            <i class="fa-solid fa-xmark fa-xl"></i>
+          </button>
+          <ul id="playlist-songs"></ul>
+        </div>
+        <a href="{% url 'add_song' %}" style="margin-top: 1rem;"><button id="playlist-add-song-btn"><i class="fa-solid fa-plus fa-xl" style="color: #ffffff;"></i></button></a>
+      </div>
+    </div>
+    
+    <div class="content">
+      <div class="lyrics"></div>
+    </div>
+    <!-- Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    
+  </body>
+</html>
